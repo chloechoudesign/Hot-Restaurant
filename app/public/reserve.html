@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Hot Restaurant</title>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+
+    <div class="jumbotron">
+      <h1><span class="glyphicon glyphicon-fire"></span> Hot Restaurant</h1>
+      <h3>Make your reservation</h3>
+      <hr>
+      <a href="/tables"><button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
+
+      <a href="/"><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-home"></span></button></a>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Table Reservation</h3>
+      </div>
+      <div class="panel-body">
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input class="form-control" type="text" id="name">
+          </div>
+          <div class="form-group">
+            <label for="number">Phone Number</label>
+            <input class="form-control" type="text" id="number">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input class="form-control" type="text" id="email">
+          </div>
+           <div class="form-group">
+            <label for="id">Unique ID</label>
+            <input class="form-control" type="text" id="id">
+          </div>
+          <button type="submit" class="btn btn-primary" id="submit" class="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p><a href="#">API Table Link</a> | <a href="#">API Wait List</a> | <a href="#">GitHub Repo</a></p>
+      </div>
+    </footer>
+  </div>
+
+  <script type="text/javascript">
+  
+  $("#submit").click(function() {
+      event.preventDefault();
+
+      var newReservation = {
+        customerName: $("#name").val().trim(),
+        phoneNumber: $("#number").val().trim(),
+        customerEmail: $("#email").val().trim(),
+        customerID: $("#id").val().trim()
+      }
+
+      console.log(newReservation);
+      return false;
+
+       var currentURL = window.location.origin;
+
+       $.post(currentURL + "/api/tables", newReservation, function(data) {
+
+          if (data == true) {
+            alert("Yay! You are officially booked!");
+          }
+
+          if (data == false) {
+            alert("Sorry you are on the wait list.");
+          }
+
+          $("#name").val("");
+          $("#number").val("");
+          $("#email").val("");
+          $("#id").val("");
+       });
+
+       return false;
+  });
+
+
+
+</script>
+</body>
+</html>
