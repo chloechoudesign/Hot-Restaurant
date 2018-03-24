@@ -4,7 +4,7 @@
 - A Node & Express based web application for handling restaurant reservation requests.
    
 ## Live Site
-- https://chloechoudesign.github.io/Gif-Tastic/
+- https://pacific-caverns-88725.herokuapp.com/
 
 ## Description
 - This app schedules restaurant reservation requests. Restaurant has 5 tables available. First 5 requests get a reservation, every request after that is sent to the waiting list.
