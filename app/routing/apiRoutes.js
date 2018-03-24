@@ -15,7 +15,9 @@ module.exports = function(app) {
     res.json(waitlistData);
   });
 
-   app.post("/api/tables", function(req, res) {
+  app.post("/api/tables", function(req, res) {
+    console.log(req.body);
+
     if(tableData.length < 5) {
       tableData.push(req.body);
       res.json(true);
@@ -24,4 +26,13 @@ module.exports = function(app) {
       res.json(false);
     }
   });
+
+  app.post("/api/clear", function() {
+    tableData = [];
+    waitlistData = [];
+
+    console.log(tableData);
+    console.log(waitlistData);
+  });
+
 }
