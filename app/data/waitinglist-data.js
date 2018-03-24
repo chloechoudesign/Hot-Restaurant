@@ -1,9 +1,9 @@
 var waitingArray = [
   {
-    customerName: 'Jessie',
-    customerEmail: 'jessie@example.com',
-    customerID: 'Jessie',
-    phoneNumber: '872-003-494',
+    customerName: 'Cynthia',
+    customerEmail: 'cynthia@example.com',
+    customerID: 'cynthia456',
+    phoneNumber: '456-003-494',
   }
 ];
 

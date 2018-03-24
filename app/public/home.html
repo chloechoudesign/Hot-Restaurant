@@ -10,26 +10,31 @@
     <!-- Bootstrap CDN-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/html" href="/style.css">
+    <!--  Custom Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/static/style.css"></style>
 
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Fredoka+One|Open+Sans:300,400,600,700|Quicksand:300,400,500,700|Roboto+Condensed:700|Source+Sans+Pro:300,400,600,700|Viga" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-
-    <div class="jumbotron">
+  <div class="container text-center">
       <h1>Hot Restaurant</h1>
       <h3>We only have 5 tables! Book your seat before they all are gone!</h3>
-      <hr>
-      <a href="/tables"><button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
 
-      <a href="/reserve"><button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-credit-card"></span> Make Reservation</button></a>
-    </div>
+      <a href="/tables"><button type="button" id="tableBtn"><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
 
-    <footer class="footer">
+      <a href="/reserve"><button type="button" id="reserveBtn"><span class="glyphicon glyphicon-credit-card"></span> Make Reservation</button></a>
+  
+
+    <!-- <footer class="footer">
       <div class="container">
         <p><a href="#" id="clear">Clear Table</a> | <a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/chloechoudesign/Hot-Restaurant">GitHub Repo</a></p>
       </div>
-    </footer>
+    </footer> -->
+
+    <div id="top"></div>
+    <div id="bottom"></div>
+    <div id="left"></div>
+    <div id="right"></div>
   </div>
 </body>
 </html>
